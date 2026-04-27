@@ -19,11 +19,11 @@ jobs:
       # (1) 레포 체크아웃
       - name: Checkout
       # uses --> 이미 잘 짜여진 코드를 가져와서 실행하겠다!
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # 또는 v6로 업데이트 제안
 
       # (2) React 빌드용 Node 세팅
       - name: Setup Node (for building React)
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4 # 또는 v6로 업데이트 제안
         with:
           node-version: "22"
           cache: "npm"
@@ -90,7 +90,7 @@ jobs:
           set -e
 
           # Public -> Private 접속
-          ssh -o StrictHostKeyChecking=no root@10.10.20.7 "bash -lc '
+          ssh -o StrictHostKeyChecking=no root@10.10.20.6 "bash -lc '
             set -e
 
             # (1) nvm 로드 (비로그인 쉘에서도 node/npm 사용 가능하게)
