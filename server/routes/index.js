@@ -19,15 +19,6 @@ router.post('/getData', (req,res)=>{
     conn.query(sql, [req.body.data], (err,rows)=>{
         console.log('rows', rows)
         
-        //////////////자영 추가/////////
-        if (err) {
-            // ❌ 여기가 핵심입니다. 이 로그를 봐야 합니다.
-            console.error('❌ SQL 에러 발생:', err.message);
-            return res.json({ status: 500, error: err.message });
-        }
-        /////////////////////////////
-        
-        
         if (rows) {
             // 요청에 대한 응답을 프론트로 
             res.json({status : 200, nick : '김자영'})
